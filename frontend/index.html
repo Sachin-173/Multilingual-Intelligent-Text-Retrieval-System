@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multilingual Text Retrieval System</title>
+    <!-- Modern Typography & Indic Unicode Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+Telugu:wght@400;600&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Tamil:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="brand-link">
+                <div class="brand-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </div>
+                <div class="brand-info">
+                    <span class="brand-title">Multilingual Text Retrieval System</span>
+                    <span class="brand-subtitle">Intelligent Multilingual Search Engine</span>
+                </div>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="#home" class="nav-link active" data-view="home">Home</a>
+                <a href="#search" class="nav-link" data-view="search">Search</a>
+                <a href="#algorithms" class="nav-link" data-view="algorithms">Algorithms</a>
+                <a href="#documents" class="nav-link" data-view="documents">Documents</a>
+                <a href="#about" class="nav-link" data-view="about">About</a>
+            </nav>
+
+            <div class="nav-actions">
+                <div class="status-indicator" title="Backend Search Engine Status">
+                    <span class="status-dot"></span>
+                    <span id="backendStatus">Engine Online</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Views Container -->
+    <main class="main-content">
+
+        <!-- ============================================================== -->
+        <!-- 1. HOME SECTION                                                -->
+        <!-- ============================================================== -->
+        <section id="view-home" class="view-section active">
+            <div class="hero-wrapper">
+                <div class="hero-badge">Autonomous Search & Retrieval</div>
+                <h1 class="hero-heading">Multilingual Text Retrieval System</h1>
+                <p class="hero-subheading">
+                    Search and discover information across multiple languages.
+                </p>
+
+                <!-- Large Search Box -->
+                <div class="hero-search-container">
+                    <div class="search-bar-box">
+                        <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input type="text" id="heroSearchInput" class="search-input" placeholder="Search documents..." value="Hyderabad">
+                        <button id="btnHeroSearch" class="btn btn-primary">Search</button>
+                    </div>
+                </div>
+
+                <!-- Supported Languages -->
+                <div class="supported-languages">
+                    <span class="languages-label">Supported Languages:</span>
+                    <span class="lang-tag lang-en">English</span>
+                    <span class="lang-divider">|</span>
+                    <span class="lang-tag lang-te">తెలుగు (Telugu)</span>
+                    <span class="lang-divider">|</span>
+                    <span class="lang-tag lang-hi">हिन्दी (Hindi)</span>
+                    <span class="lang-divider">|</span>
+                    <span class="lang-tag lang-ta">தமிழ் (Tamil)</span>
+                </div>
+            </div>
+
+            <!-- Four Feature Cards -->
+            <div class="features-container">
+                <div class="feature-card" onclick="location.hash='#search'">
+                    <div class="feature-icon-wrapper">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Exact Search</h3>
+                    <p>Accurate keyword matching using linear string search that locates precise occurrences across multilingual documents.</p>
+                </div>
+
+                <div class="feature-card" onclick="location.hash='#search'">
+                    <div class="feature-icon-wrapper">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                    </div>
+                    <h3>Fuzzy Search</h3>
+                    <p>Typo-tolerant discovery with dynamic edit distance, suggesting accurate spelling corrections automatically.</p>
+                </div>
+
+                <div class="feature-card" onclick="location.hash='#search'">
+                    <div class="feature-icon-wrapper">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h3>Prefix Search</h3>
+                    <p>Fast autocomplete and prefix exploration that returns words and documents beginning with your search term.</p>
+                </div>
+
+                <div class="feature-card" onclick="location.hash='#search'">
+                    <div class="feature-icon-wrapper">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                    </div>
+                    <h3>Multilingual Search</h3>
+                    <p>Native Unicode support across English, Telugu, Hindi, and Tamil without external translation or character conversion.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================== -->
+        <!-- 2. SEARCH SECTION (MAIN FEATURE)                              -->
+        <!-- ============================================================== -->
+        <section id="view-search" class="view-section">
+            <div class="search-header-container">
+                <div class="search-bar-box main-search-box">
+                    <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" id="mainSearchInput" class="search-input" placeholder="Search documents..." value="Hyderabad">
+                    <button id="btnMainClear" class="btn-clear" title="Clear input">&times;</button>
+                    <button id="btnMainSearch" class="btn btn-primary">Search</button>
+                </div>
+
+                <!-- Quick Query Test Chips -->
+                <div class="quick-chips-row">
+                    <span class="quick-label">Try searching:</span>
+                    <button class="chip-btn" data-query="Hyderabad">Hyderabad</button>
+                    <button class="chip-btn" data-query="Hyderbad">Hyderbad <span class="chip-hint">(Typo)</span></button>
+                    <button class="chip-btn" data-query="hyd">hyd <span class="chip-hint">(Prefix)</span></button>
+                    <button class="chip-btn" data-query="India Telangana Hyderabad">India Telangana Hyderabad <span class="chip-hint">(Multi)</span></button>
+                    <button class="chip-btn lang-te" data-query="తెలంగాణ">తెలంగాణ</button>
+                    <button class="chip-btn lang-hi" data-query="भारत">भारत</button>
+                    <button class="chip-btn lang-ta" data-query="இந்தியா">இந்தியா</button>
+                </div>
+            </div>
+
+            <!-- SEARCH ANALYSIS SECTION -->
+            <div id="searchAnalysisCard" class="analysis-card">
+                <div class="analysis-top">
+                    <div class="analysis-title-group">
+                        <span class="analysis-badge">Search Analysis</span>
+                        <span class="analysis-query-text" id="analysisQueryDisplay">Query: <strong>Hyderabad</strong></span>
+                    </div>
+                </div>
+
+                <div class="analysis-summary-grid">
+                    <div class="analysis-metric">
+                        <span class="metric-label">Detected:</span>
+                        <span class="metric-value text-accent" id="analysisDetected">Exact keyword search</span>
+                    </div>
+                    <div class="analysis-metric">
+                        <span class="metric-label">Selected Algorithm:</span>
+                        <span class="metric-value" id="analysisSelectedAlgo">KMP</span>
+                    </div>
+                    <div class="analysis-metric" id="analysisCorrectionContainer" style="display: none;">
+                        <span class="metric-label">Suggested Correction:</span>
+                        <button id="btnApplyCorrection" class="suggestion-btn">Hyderabad</button>
+                    </div>
+                    <div class="analysis-metric">
+                        <span class="metric-label">Search Algorithm:</span>
+                        <span class="metric-value text-secondary" id="analysisSearchAlgo">KMP</span>
+                    </div>
+                </div>
+
+                <!-- Prefix Autocompletions (When Prefix Detected) -->
+                <div id="prefixPillsContainer" class="prefix-pills-row" style="display: none;">
+                    <span class="prefix-title">Prefix Suggestions:</span>
+                    <div id="prefixPillsList" class="pills-flex"></div>
+                </div>
+
+                <!-- Expandable Technical Explanation -->
+                <details class="tech-accordion" id="techAccordion">
+                    <summary class="accordion-summary">
+                        <span>How was this found?</span>
+                        <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </summary>
+                    <div class="accordion-content" id="analysisReasonDetails">
+                        The system checked the query characteristics against document vocabulary. Since an exact word was detected, the Knuth-Morris-Pratt (KMP) linear string matching algorithm was automatically selected to retrieve relevant documents without text-pointer backtracking.
+                    </div>
+                </details>
+            </div>
+
+            <!-- SEARCH RESULTS HEADER -->
+            <div class="results-meta-header">
+                <h2 class="results-heading">Results for <span id="resultsQueryTitle">"Hyderabad"</span></h2>
+                <span id="resultsCountBadge" class="results-count-text">Found 8 documents</span>
+            </div>
+
+            <!-- SEARCH RESULTS LIST -->
+            <div id="searchResultsList" class="results-grid">
+                <!-- Dynamically populated via app.js -->
+            </div>
+        </section>
+
+        <!-- ============================================================== -->
+        <!-- 3. ALGORITHMS SECTION                                          -->
+        <!-- ============================================================== -->
+        <section id="view-algorithms" class="view-section">
+            <div class="section-header">
+                <h2>Retrieval Algorithms</h2>
+                <p class="section-subtitle">
+                    The core algorithms powering automatic query understanding and high-performance multilingual text retrieval.
+                </p>
+            </div>
+
+            <div class="algo-cards-container">
+                <!-- KMP -->
+                <div class="algo-info-card">
+                    <div class="algo-card-top">
+                        <h3>KMP (Knuth-Morris-Pratt)</h3>
+                        <span class="complexity-badge">O(n + m)</span>
+                    </div>
+                    <div class="algo-card-field">
+                        <span class="field-label">What it does:</span>
+                        <p class="field-text">Finds an exact pattern inside text efficiently by precomputing a prefix table so matching never rewinds the text index.</p>
+                    </div>
+                    <div class="algo-card-field">
+                        <span class="field-label">Where it is used:</span>
+                        <p class="field-text">Exact document searching for single-keyword and phrase queries.</p>
+                    </div>
+                    <div class="algo-card-field">
+                        <span class="field-label">Time Complexity:</span>
+                        <code class="code-tag">O(n + m)</code>
+                    </div>
+                </div>
+
+                <!-- Rabin-Karp -->
+                <div class="algo-info-card">
+                    <div class="algo-card-top">
+                        <h3>Rabin-Karp Rolling Hash</h3>
+                        <span class="complexity-badge">Avg O(n + m)</span>
+                    </div>
+                    <div class="algo-card-field">
+                        <span class="field-label">What it does:</span>
+                        <p class="field-text">Computes a sliding polynomial hash value for text windows, updating the hash in O(1) time as the window moves.</p>
+                    </div>
+                    <div class="algo-card-field">
+                        <span class="field-label">Where it is used:</span>
+                        <p class="field-text">Hash-based pattern matching and multi-string candidate verification.</p>
+                    </div>
+                    <div class="algo-card-field">
+                        <span class="field-label">Time Complexity:</span>
+                        <code class="code-tag">Average O(n + m), Worst O(n * m)</code>
+                    </div>
+                </div>
+
+                <!-- Trie -->
+                <div class="algo-info-card">
+                    <div class="algo-card-top">
+                        <h3>Trie (Prefix Tree)</h3>
+                        <span class="complexity-badge">O(m) Lookup</span>
+                    </div>
+                    <div class="algo-card-field">
+                        <span class="field-label">What it does:</span>
+                        <p class="field-text">Tree structure that stores words character-by-character along branches, allowing instant prefix navigation independent of total vocabulary size.</p>
+                    </div>
+                    <div class="algo-card-field">
+                        <span class="field-label">Where it is used:</span>
+                        <p class="field-text">Real-time prefix search and autocomplete suggestions.</p>
+                    </div>
+                    <div class="algo-card-field">
+                        <span class="field-label">Time Complexity:</span>
+                        <code class="code-tag">O(m) where m is keyword length</code>
+                    </div>
+                </div>
+
+                <!-- Aho-Corasick -->
+                <div class="algo-info-card">
+                    <div class="algo-card-top">
+                        <h3>Aho-Corasick Automaton</h3>
+                        <span class="complexity-badge">O(n + z) Matching</span>
+                    </div>
+                    <div class="algo-card-field">
+                        <span class="field-label">What it does:</span>
+                        <p class="field-text">Builds a state machine with failure transitions across a Trie, locating multiple keywords simultaneously in a single linear pass.</p>
+                    </div>
+                    <div class="algo-card-field">
+                        <span class="field-label">Where it is used:</span>
+                        <p class="field-text">Multi-keyword queries searching several terms at once.</p>
+                    </div>
+                    <div class="algo-card-field">
+                        <span class="field-label">Time Complexity:</span>
+                        <code class="code-tag">O(n + z) where z is match count</code>
+                    </div>
+                </div>
+
+                <!-- Levenshtein Edit Distance -->
+                <div class="algo-info-card">
+                    <div class="algo-card-top">
+                        <h3>Levenshtein Edit Distance</h3>
+                        <span class="complexity-badge">O(n * m) DP</span>
+                    </div>
+                    <div class="algo-card-field">
+                        <span class="field-label">What it does:</span>
+                        <p class="field-text">Calculates the minimum number of character insertions, deletions, and substitutions required to convert one word into another.</p>
+                    </div>
+                    <div class="algo-card-field">
+                        <span class="field-label">Where it is used:</span>
+                        <p class="field-text">Fuzzy search and automatic "Did you mean?" typo correction.</p>
+                    </div>
+                    <div class="algo-card-field">
+                        <span class="field-label">Time Complexity:</span>
+                        <code class="code-tag">O(n * m)</code>
+                    </div>
+                </div>
+
+                <!-- Suffix Array -->
+                <div class="algo-info-card">
+                    <div class="algo-card-top">
+                        <h3>Suffix Array</h3>
+                        <span class="complexity-badge">O(n log² n)</span>
+                    </div>
+                    <div class="algo-card-field">
+                        <span class="field-label">What it does:</span>
+                        <p class="field-text">Stores sorted suffix starting positions for a text, enabling binary search lookups for arbitrary substrings.</p>
+                    </div>
+                    <div class="algo-card-field">
+                        <span class="field-label">Where it is used:</span>
+                        <p class="field-text">Advanced substring searching and full-text pattern indexing.</p>
+                    </div>
+                    <div class="algo-card-field">
+                        <span class="field-label">Time Complexity:</span>
+                        <code class="code-tag">O(n log² n) construction, O(m log n) lookup</code>
+                    </div>
+                </div>
+
+                <!-- LCP -->
+                <div class="algo-info-card">
+                    <div class="algo-card-top">
+                        <h3>Longest Common Prefix (LCP)</h3>
+                        <span class="complexity-badge">O(n) Kasai</span>
+                    </div>
+                    <div class="algo-card-field">
+                        <span class="field-label">What it does:</span>
+                        <p class="field-text">Measures the shared prefix lengths between consecutive suffixes in the Suffix Array using Kasai's linear algorithm.</p>
+                    </div>
+                    <div class="algo-card-field">
+                        <span class="field-label">Where it is used:</span>
+                        <p class="field-text">Discovering the longest repeated substrings and analyzing document content overlap.</p>
+                    </div>
+                    <div class="algo-card-field">
+                        <span class="field-label">Time Complexity:</span>
+                        <code class="code-tag">O(n)</code>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================== -->
+        <!-- 4. DOCUMENTS SECTION                                           -->
+        <!-- ============================================================== -->
+        <section id="view-documents" class="view-section">
+            <div class="section-header">
+                <h2>Document Repository</h2>
+                <p class="section-subtitle">
+                    Sample documents indexed across English, Telugu, Hindi, and Tamil covering Science, Space, Technology, Cities, and Culture.
+                </p>
+            </div>
+
+            <!-- Search & Filters -->
+            <div class="doc-controls-card">
+                <div class="doc-search-wrapper">
+                    <input type="text" id="docFilterInput" class="doc-filter-input" placeholder="Filter documents by title, keyword, or topic...">
+                </div>
+
+                <div class="doc-filter-pills">
+                    <button class="doc-filter-btn active-doc-filter" data-lang="All">All (<span id="countAll">32</span>)</button>
+                    <button class="doc-filter-btn" data-lang="English">English (<span id="countEn">8</span>)</button>
+                    <button class="doc-filter-btn" data-lang="Telugu">తెలుగు (<span id="countTe">8</span>)</button>
+                    <button class="doc-filter-btn" data-lang="Hindi">हिन्दी (<span id="countHi">8</span>)</button>
+                    <button class="doc-filter-btn" data-lang="Tamil">தமிழ் (<span id="countTa">8</span>)</button>
+                </div>
+            </div>
+
+            <!-- Documents Grid -->
+            <div id="documentsListGrid" class="documents-grid">
+                <!-- Dynamically populated via app.js -->
+            </div>
+        </section>
+
+        <!-- ============================================================== -->
+        <!-- 5. ABOUT SECTION                                               -->
+        <!-- ============================================================== -->
+        <section id="view-about" class="view-section">
+            <div class="about-card">
+                <h2>About Multilingual Text Retrieval System</h2>
+                <p class="about-lead">
+                    Multilingual Text Retrieval System is an intelligent, standalone search engine engineered for fast and accurate information discovery across multiple languages.
+                </p>
+
+                <div class="about-grid">
+                    <div class="about-item">
+                        <h3>Automatic Query Routing</h3>
+                        <p>Users enter queries naturally without selecting algorithmic search modes. The system automatically analyzes token counts, prefix lengths, known vocabulary, and edit distance to deploy the optimal search algorithm dynamically.</p>
+                    </div>
+
+                    <div class="about-item">
+                        <h3>Native Indic Script Support</h3>
+                        <p>Built-in UTF-8 Unicode processing natively handles English, Telugu, Hindi, and Tamil scripts without third-party converters, translation APIs, or external character transformations.</p>
+                    </div>
+
+                    <div class="about-item">
+                        <h3>Pure Standalone Architecture</h3>
+                        <p>The system operates 100% offline with zero dependencies on external search engines, Elasticsearch, Lucene, or cloud AI services. All core algorithms are manually implemented.</p>
+                    </div>
+
+                    <div class="about-item">
+                        <h3>Relevance Ranking</h3>
+                        <p>Discovered documents are scored on occurrence frequencies, title proximity, and pattern weights, ranked using a stable MergeSort algorithm to guarantee clean result presentation.</p>
+                    </div>
+                </div>
+
+                <div class="about-system-flow">
+                    <h3>Retrieval Architecture Flow</h3>
+                    <div class="flow-steps">
+                        <div class="flow-step">
+                            <span class="step-num">1</span>
+                            <span>User Query</span>
+                        </div>
+                        <div class="flow-arrow">&rarr;</div>
+                        <div class="flow-step">
+                            <span class="step-num">2</span>
+                            <span>Query Analysis</span>
+                        </div>
+                        <div class="flow-arrow">&rarr;</div>
+                        <div class="flow-step">
+                            <span class="step-num">3</span>
+                            <span>Algorithm Selection</span>
+                        </div>
+                        <div class="flow-arrow">&rarr;</div>
+                        <div class="flow-step">
+                            <span class="step-num">4</span>
+                            <span>Document Search</span>
+                        </div>
+                        <div class="flow-arrow">&rarr;</div>
+                        <div class="flow-step">
+                            <span class="step-num">5</span>
+                            <span>Relevance Ranking</span>
+                        </div>
+                        <div class="flow-arrow">&rarr;</div>
+                        <div class="flow-step">
+                            <span class="step-num">6</span>
+                            <span>Result Display</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Document Detail Preview Modal -->
+    <div id="docModal" class="modal-backdrop hidden">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <div>
+                    <h3 id="modalDocTitle">Document Title</h3>
+                    <div class="modal-tags">
+                        <span id="modalDocLang" class="lang-tag lang-en">English</span>
+                        <span id="modalDocCat" class="cat-tag">Technology</span>
+                        <span id="modalDocId" class="doc-id-badge">ID: #1</span>
+                    </div>
+                </div>
+                <button id="btnModalClose" class="modal-close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="modalDocContent" class="modal-content-text"></p>
+            </div>
+            <div class="modal-footer">
+                <button id="btnModalCloseFooter" class="btn btn-secondary">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <strong>Multilingual Text Retrieval System</strong>
+                <p>Fast, intelligent search across English, Telugu, Hindi, and Tamil.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#search">Search</a>
+                <a href="#algorithms">Algorithms</a>
+                <a href="#documents">Documents</a>
+                <a href="#about">About</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; Multilingual Text Retrieval System &bull; Standalone Search Engine</span>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
